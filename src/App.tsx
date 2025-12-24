@@ -1,31 +1,15 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
-import GetStarted from "./pages/GetStarted";
-import Identity from "./pages/Identity";
+import { Routes, Route } from "react-router-dom";
 
-const queryClient = new QueryClient();
+function App() {
+  return (
+    <Routes>
+      {/* HOME ROUTE */}
+      <Route path="/" element={<h1>Smart Train Pass App Loaded ✅</h1>} />
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/get-started" element={<GetStarted />} />
-          <Route path="/identity/:aadhaar" element={<Identity />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+      {/* CATCH-ALL (optional) */}
+      <Route path="*" element={<h1>404 - Route Not Found</h1>} />
+    </Routes>
+  );
+}
 
 export default App;
