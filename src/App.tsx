@@ -3,11 +3,11 @@ import { Routes, Route } from "react-router-dom";
 function App() {
   return (
     <Routes>
-      {/* HOME ROUTE */}
-      <Route path="/" element={<h1>Smart Train Pass App Loaded ✅</h1>} />
+      {/* HOME */}
+      <Route path="/" element={<h1>Smart Train Pass Loaded ✅</h1>} />
 
-      {/* CATCH-ALL (optional) */}
-      <Route path="*" element={<h1>404 - Route Not Found</h1>} />
+      {/* TEMP fallback */}
+      <Route path="*" element={<h1>App Route Not Found</h1>} />
     </Routes>
   );
 }
